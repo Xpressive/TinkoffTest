@@ -49,7 +49,7 @@ final class NewsFeedPresenter {
             self.news = news
             self.view?.updateView()
         }
-        update(limit: 20, offset: 0)
+        update(limit: Constants.limit, offset: 0)
     }
     
     func configure(cell: NewsFeedTableViewCell, forRow row: Int) {
@@ -105,11 +105,11 @@ final class NewsFeedPresenter {
     
     func refreshTable() {
         self.hasMoreCache = true
-        update(limit: 20, offset: 0)
+        update(limit: Constants.limit, offset: 0)
     }
     
     func loadMoreNews() {
-        update(limit: 20, offset: news.count)
+        update(limit: Constants.limit, offset: news.count)
     }
     
 }
